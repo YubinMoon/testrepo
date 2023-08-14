@@ -1,0 +1,16 @@
+name: test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  echo-test:
+    name: echo test
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo env
+        run: echo "${env.TESTENV}"
+      - name: echo secrets
+        run: echo "${secrets.TESTSECRET}"
+      - name: echo variables
+        run: echo "${variables.TESTVAR}"
